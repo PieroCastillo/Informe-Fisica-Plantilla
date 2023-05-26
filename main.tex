@@ -1,69 +1,82 @@
-\documentclass[12pt,a4paper]{article}
-\usepackage[a4paper, margin=1in]{geometry}
+% document layout
+\documentclass[12pt, a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{subfiles}
+
+% text options
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+% headers and footers
+\usepackage{fancyhdr}
+
+% math extensions
 \usepackage{amsmath}
 \usepackage{siunitx}
-\usepackage{graphicx}
-\usepackage{txfonts}
-\usepackage{hyperref}
-\usepackage[spanish,es-tabla]{babel}
+\sisetup{per-mode=fraction}
+
+% content layout
+\usepackage{float}
+\usepackage{booktabs}
 \usepackage{subcaption}
-\usepackage{adjustbox} 
-\usepackage{subfiles} %mmultiples archivos de latex
-\usepackage{multirow} %multiples columnas
-\usepackage{fancyhdr} %encabezados
-\usepackage{float} %posicion
-\usepackage[square,numbers]{natbib} %bibliografia
-\bibliographystyle{abbrvnat}
+\usepackage{adjustbox}
+
+% external imports
+\usepackage{graphicx}
+
+% references
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage[style=authoryear]{biblatex}
+\addbibresource{resources/references.bib}
+
+%\AtBeginDocument{\RenewCommandCopy\qty\SI} %compiler's bug's patch
 
 \begin{document}
+\subfile{parts/cover}
 
-\subfile{sections/caratula} %done
-
+% custon header and footer setup
 \pagestyle{fancy}
-\fancyfoot{}
-\fancyfoot[R]{\textit{\thepage}}
-\fancyfoot[L]{\textit{Facultad de Ciencias - UNI}}
-%-------------------------------------------------------------------
-\tableofcontents
-%-------------------------------------------------------------------
+\fancyfoot{} % clear all footer fields
+\fancyfoot[L]{Facultad de Ciencias - UNI}
+\fancyfoot[R]{\thepage}
 
-\newpage
-\section{Objetivos del Experimento} %empty
-\subfile{sections/objetivos}
-%-------------------------------------------------------------------
-\section{Fundamento Teórico} %empty
-\subfile{sections/fundamentos}
-%-------------------------------------------------------------------
-\section{Equipo utilizado} %empty
-\subfile{sections/descripcion}
-%-------------------------------------------------------------------
-\section{Procedimiento Experimental} %empty
-\subfile{sections/procedimiento}
-%-------------------------------------------------------------------
-\section{Tablas de Datos} %empty
-\subfile{sections/tablas}
-%-------------------------------------------------------------------
-\section{Cálculos y Resultados} %empty
-\subfile{sections/calculos}
-%-------------------------------------------------------------------
-\section{Discusiones} %empty
-\subfile{sections/discusiones}
-%-------------------------------------------------------------------
-\section{Sugerencias} %empty
-\subfile{sections/sugerencias}
-%-------------------------------------------------------------------
-\section{Conclusiones} %empty
-\subfile{sections/conclusiones}
-%-------------------------------------------------------------------
-\section{Bibliografía} %empty
-\renewcommand{\bibsection}{}
-%\subfile{sections/bibliografia}
-\bibliography{extras/references}
-%-------------------------------------------------------------------
-\newpage
+\tableofcontents
+\clearpage
+
+\section{Objetivos}
+\subfile{parts/objectives}
+
+\section{Marco teórico}
+\subfile{parts/theory}
+
+\section{Equipo utilizado}
+\subfile{parts/equipment}
+
+\section{Procedimientos}
+\subfile{parts/procedures}
+
+\section{Tablas de datos}
+\subfile{parts/tables}
+
+\section{Cálculos y resultados}
+\subfile{parts/results}
+
+\section{Discusiones}
+\subfile{parts/discussion}
+
+\section{Conclusiones}
+\subfile{parts/conclusion}
+
+\section{Bibliografía}
+\printbibliography
+
+\clearpage
+
 \listoffigures
 \listoftables
-\newpage
-\section{Anexo}
 
+\clearpage
+
+\section{Anexo}
 \end{document}
