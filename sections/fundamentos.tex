@@ -1,0 +1,37 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\subsection{Sistema de Referencia Inercial}
+Es un sistema de referencia el cuál presenta \textit{velocidad constante}, o lo que es lo mismo, \textit{aceleración nula}.
+\subsection{Cantidad de Movimiento o Momentum \( ( \vec{p} ) \)}
+La \textbf{cantidad de movimiento} se define como \textbf{el producto de la masa por su velocidad}.\cite{finn}
+\[ \vec{p} = m \cdot \vec{v} \]
+Es una cantidad vectorial y tiene la misma dirección que la velocidad. Su importancia radica en que combina los 2 elementosque caracterizan el estado dinámico de una partícula: su masa y su velocidad.\cite{finn}
+\subsection{Fuerza  \( ( \vec{F} ) \)}
+Es un concepto matemático que nos permite entender la causa del movimiento de una partícula. Se define como \textbf{la derivada de la cantidad de movimiento con respecto al tiempo}.\cite{finn}
+\[ \vec{F} = \frac{d \vec{p}}{dt} \]
+Usando definición de la cantidad de movimiento:
+\[ \vec{F} = \frac{d  (m \cdot \vec{v}) }{dt} \]
+Si la masa es constante, entonces:
+\[ \vec{F} = m \cdot \frac{d \vec{v} }{dt} \]
+Pero la derivada de la velocidad con respecto al tiempo es la aceleración, entonces queda:
+\[ \vec{F}  = m \cdot \vec{a} \]
+
+\subsection{Segunda Ley de Newton}
+Esta ley dicta lo siquiente: \\ \\
+\textit{Si una fuerza externa neta actúa sobre un cuerpo, éste se acelera. La dirección de la aceleración es la misma 
+que la de la fuerza neta. El vector de fuerza neta es igual a la masa del cuerpo 
+multiplicada por su aceleración.} \cite{sears} \\ \\
+Se escribe de la siguiente manera:
+\[ \sum \vec{F}  = m \cdot \vec{a_r} \]
+Se debe dar la aclaración de que esta ley solo es válida en un \textit{sistema de referencia inercial}.
+\subsection{Desviación Estándar}
+La desviación estándar es una medida de extensión o 
+variabilidad en la estadística descriptiva. 
+Se utiliza para calcular la variación o dispersión
+en la que los puntos de datos individuales difieren 
+de la media. 
+\begin{equation} \label{desviacion_eq}
+    \rho = \sqrt{\frac{\sum^N_{i=1} (x_i - \overline{x})^2}{N}}
+\end{equation}
+\end{document}
